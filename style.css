@@ -1,0 +1,142 @@
+/* 
+ Default layout for larger screens (laptop) */ 
+.container {
+    display: grid;
+    grid-template-areas: 
+        "header header header header"
+        "feed1 feed2 feed2 feed3"
+        "register register register register"
+        "foot foot foot foot";
+    gap: 10px; /* Space between grid items */
+}
+
+.content {
+    border: 1px solid greenyellow;
+    color: crimson;
+    font-size: larger;
+    padding: 20px;
+    margin: 5px;
+    background-color: chartreuse;
+}
+
+button {
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: wheat;
+    color: black;
+}
+
+/* Tablet view (max-width: 768px) - Stack items vertically */
+@media (max-width: 768px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "feed1"
+            "feed2"
+            "feed3"
+            "register"
+            "foot"; /* Items will stack vertically */
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .content {
+        padding: 15px;
+        font-size: medium;
+    }
+}
+
+/* Mobile view (max-width: 600px) - Further stacking and styling */
+@media (max-width: 600px) {
+    .container {
+        grid-template-areas: 
+            "header"
+            "feed1"
+            "feed2"
+            "feed3"
+            "register"
+            "foot"; /* Continue stacking vertically */
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .content {
+        border: 5px solid purple;
+        color: black;
+        font-family: cursive;
+        font-size: 60%;
+    }
+
+    button {
+        font-size: 25px;
+        border-radius: 8px;
+        background-color: black;
+        color: aliceblue;
+    }
+
+    /* Background styles */
+    #c1 {
+        background: radial-gradient(lightblue, white, plum);
+    }
+
+    #c2 {
+        background: radial-gradient(greenyellow, wheat, red);
+    }
+
+    #c3 {
+        background: radial-gradient(plum, pink, white);
+    }
+
+    #c4 {
+        background: radial-gradient(magenta, white, yellow);
+    }
+
+    #c5 {
+        background: radial-gradient(plum, pink, white);
+    }
+
+    #c6 {
+        background: radial-gradient(red, pink, white);
+    }
+}
+
+/* Further adjustments for very small screens (phones) */
+@media (max-width: 320px) {
+    .content {
+        font-size: 20%;
+        margin: 0;
+    }
+}
+
+/* Grid areas for individual elements */
+#c1 {
+    grid-area: header;
+    text-align: center;
+}
+
+#c2 {
+    grid-area: feed1;
+    text-align: center;
+    padding: 10%;
+}
+
+#c3 {
+    grid-area: feed2;
+    text-align: center;
+    padding: 10%;
+}
+
+#c4 {
+    grid-area: feed3;
+    text-align: center;
+    padding: 10%;
+}
+
+#c5 {
+    grid-area: register;
+    text-align: center;
+    padding: 10%;
+}
+
+#c6 {
+    grid-area: foot;
+    text-align: center;
+}
